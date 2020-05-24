@@ -1,1 +1,1 @@
-# React/Node (Express) bolierplate
+# React/Node (Express) Scaffolding
