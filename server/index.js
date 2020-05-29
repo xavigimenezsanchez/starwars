@@ -40,6 +40,7 @@ app.get("/auth", (req, res) => {
 //routes
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
+require('./routes/starwars.v1')(app);
 
 app.get('/', (req, res) => {
   res.sendFile(HTML_FILE);
