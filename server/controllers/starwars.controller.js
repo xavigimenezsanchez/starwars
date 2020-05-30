@@ -57,7 +57,6 @@ exports.characters = async (req, res) => {
             let especie = 'human';
             if (character.species.length > 0) {
                 const result = await axios.get(character.species[0]);
-                console.log(result.data.name)
                 especie = result.data.name;
             }
             return { ...character, "especie": especie}
@@ -68,7 +67,6 @@ exports.characters = async (req, res) => {
     } 
     try {
         const film = await axios.get('https://swapi.dev/api/films/' + req.params.filmId);
-        console.log(film.data.characters)
         const characterStage1 = await getCharacters(film.data.characters)
         const characterStage2 = await getOrigen(characterStage1);
         const characterStage3 = await getEspecie(characterStage2);

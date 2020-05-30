@@ -23,11 +23,6 @@ const User = db.user;
 
 db.sequelize.sync({force: true}).then(() => {
   console.log('Drop and Resync Db');
-  User.create({
-    username: 'test',
-    email: 'test@test.com',
-    password: '1234'
-  })
 });
 
 

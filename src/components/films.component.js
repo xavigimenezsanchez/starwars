@@ -30,7 +30,6 @@ export default class Films extends Component {
   loadFilms() {
     FilmsService.getFilms().then(
       response => {
-        console.log(response)
         this.setState({
           films: response.data.data,
           filmsLoading: false
@@ -110,7 +109,7 @@ export default class Films extends Component {
           <h3 hidden={!this.state.filmsLoading}><Spinner  animation="border" role="status" variant="warning"/> Cargando Pelis ...</h3>
           
           <div hidden={this.state.filmsLoading}> 
-            <h1>StarWars Films</h1>
+            <h1>StarWars Films <span hidden={!this.state.error}>{this.state.error}</span></h1>
           </div>
           
         </header>
