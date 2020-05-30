@@ -16,7 +16,6 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(express.static(DIST_DIR));
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = require("./models")
@@ -32,20 +31,14 @@ db.sequelize.sync({force: true}).then(() => {
 });
 
 
-
-app.get("/auth", (req, res) => {
-  res.json({ message: "Welcome to starwars application." });
-});
-
 //routes
 require('./routes/auth.routes')(app);
-require('./routes/user.routes')(app);
 require('./routes/starwars.v1')(app);
 
 app.get('/*', (req, res) => {
   res.sendFile(HTML_FILE);
 });
-//
+
 app.listen(port, function () {
  console.log('App listening on port: ' + port);
 });
