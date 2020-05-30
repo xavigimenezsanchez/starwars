@@ -10,6 +10,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: "[name].js"
   }, // NEW Ends
+
   plugins: [htmlPlugin],
   module: {
     rules: [

@@ -12,13 +12,13 @@ module.exports = function(app) {
 
 
   app.get(
-    "/starwars/v1/films",
-    //[authJwt.verifyToken],
+    "/api/starwars/v1/films",
+    [authJwt.verifyToken],
     controller.films
   );
   app.get(
-    "/starwars/v1/films/:filmId/characters",
-    //[authJwt.verifyToken],
+    "/api/starwars/v1/films/:filmId/characters",
+    [authJwt.verifyToken],
     controller.characters
   );
 };

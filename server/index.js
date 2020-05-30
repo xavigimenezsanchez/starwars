@@ -34,7 +34,7 @@ db.sequelize.sync({force: true}).then(() => {
 
 
 app.get("/auth", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to starwars application." });
 });
 
 //routes
@@ -42,7 +42,7 @@ require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 require('./routes/starwars.v1')(app);
 
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(HTML_FILE);
 });
 //
