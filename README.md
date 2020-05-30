@@ -19,3 +19,9 @@ Con respecto la autenticación  he utilizado jsonwebtoken y bcruyptjs (todo y qu
 ### Test
 Solo he podido instalar los paquetes no he tenido tiempo de poder hacer algun test 😥
 
+## App
+   Para entrar:
+   * Crea Un Usuario
+   * Has login
+   * Entra a Films
+   * Clica en cualquera de las peliculas y apareceran todos los caracteres de la misma
